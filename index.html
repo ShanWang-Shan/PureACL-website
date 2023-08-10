@@ -63,8 +63,8 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Australian National University</span>
-            <span class="author-block">Data61, CSIRO</span>
+            <span class="author-block">Australian National University,</span>
+            <span class="author-block">CSIRO, </span>
             <span class="author-block">Ford Motor Company</span>
           </div>
 
@@ -86,7 +86,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ShanWang-Shan/PureACL"
+                <a href="https://github.com/ShanWang-Shan/PureACL-website"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -108,12 +108,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/images/teaser.mp4"
+      <video id="visualization" autoplay muted loop playsinline height="100%">
+        <source src="./static/images/PureACL.mp4"
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">PureACL</span> Confidence Visualization.
+        <span class="dnerf">PureACL</span> Confidence and pose optimization visualization.
       </h2>
     </div>
   </div>
@@ -128,14 +128,11 @@
         <h2 class="title is-3">Method Overview</h2>
         <div class="content has-text-justified">
         <p>
-          SAFCE is used to produce feature maps ($F$), view-consistent confidence maps ($V$), and on-ground confidence maps ($O$) separately for satellite and ground-view images. 
-    The VOKD fuses the confidence maps and identifies the top-k confident features from the ground-view images and their corresponding features on the satellite feature maps.
-    Sub-pixel interpolation is used to lookup point features ($F[p]$ from $F$) and their weights ($w[p]$ from $V \otimes O$).
-    The residual between the two views ($r[p]_{\mathbf{P}} = F^{s}[p]_{\mathbf{P}} - F^{g}[p]$) and the point weights ($w[p]_{\mathbf{P}} = w^{s}[p]_{\mathbf{P}} \times w^{g}[p]$) are fed to the RPRB for subsequent pose optimization. The \textcolor{olive}{olive} outline indicates that the $O^s$ disables gradient backpropagation while \textcolor{red}{red}, \textcolor{green}{green}, \textcolor{blue}{blue} and \textcolor{magenta}{magenta} outlines and points represent the \textcolor{red}{front}, \textcolor{green}{left}, \textcolor{blue}{right} and \textcolor{magenta}{rear} views, respectively.
+          SAFCE is used to produce feature maps (F), view-consistent confidence maps (V), and on-ground confidence maps (O) separately for satellite and ground-view images. The VOKD fuses the confidence maps and identifies the top-k confident features from the ground-view images and their corresponding features on the satellite feature maps. Sub-pixel interpolation is used to lookup point features (F[p] from F) and their weights (w[p] from VxO). The residual between the two views and the point weights are fed to the RPRB for subsequent pose optimization. The olive outline indicates that the O^s disables gradient backpropagation while red, green, blue and magenta outlines and points represent the front, left, right and rear views, respectively.
         </p>
         </div>
         <div class="publication-video">
-          <img src="./static/images/teaser.jpg" alt="Teaser" style="width:100%;">
+          <img src="./static/images/PureACL.png" alt="Teaser" style="width:100%;">
         </div>
       </div>
     </div>
@@ -148,11 +145,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper proposes a fine-grained self-localization method for outdoor robotics that utilizes a flexible number of onboard cameras and readily accessible satellite images. 
-The proposed method addresses limitations in existing cross-view localization methods that struggle to handle noise sources such as moving objects and seasonal variations. It is the first sparse visual-only method that enhances perception in dynamic environments by detecting view-consistent key points and their corresponding deep features from ground and satellite views, while removing off-the-ground objects and establishing homography transformation between the two views.
-Moreover, the proposed method incorporates a spatial embedding approach that leverages camera intrinsic and extrinsic information to reduce the ambiguity of purely visual matching, leading to improved feature matching and overall pose estimation accuracy.
-The method exhibits strong generalization and is robust to environmental changes, requiring only geo-poses as ground truth.
-Extensive experiments on the KITTI and Ford Multi-AV Seasonal datasets demonstrate that our proposed method outperforms existing state-of-the-art methods, achieving median spatial accuracy errors below $0.5$ meters along the lateral and longitudinal directions, and a median orientation accuracy error below $2^\circ$.
+            This paper proposes a fine-grained self-localization method for outdoor robotics that utilizes a flexible number of onboard cameras and readily accessible satellite images. The proposed method addresses limitations in existing cross-view localization methods that struggle to handle noise sources such as moving objects and seasonal variations. It is the first sparse visual-only method that enhances perception in dynamic environments by detecting view-consistent key points and their corresponding deep features from ground and satellite views, while removing off-the-ground objects and establishing homography transformation between the two views. Moreover, the proposed method incorporates a spatial embedding approach that leverages camera intrinsic and extrinsic information to reduce the ambiguity of purely visual matching, leading to improved feature matching and overall pose estimation accuracy. The method exhibits strong generalization and is robust to environmental changes, requiring only geo-poses as ground truth. Extensive experiments on the KITTI and Ford Multi-AV Seasonal datasets demonstrate that our proposed method outperforms existing state-of-the-art methods, achieving median spatial accuracy errors below 0.5 meters along the lateral and longitudinal directions, and a median orientation accuracy error below 2 degrees.
           </p>
         </div>
       </div>
@@ -166,7 +159,7 @@ Extensive experiments on the KITTI and Ford Multi-AV Seasonal datasets demonstra
         <div class="content has-text-justified">
         </div>
         <div class="publication-video">
-          <img src="./static/images/comparison_kitti.jpg" alt="Teaser" style="width:100%;">
+          <img src="./static/images/comparison_kitti.png" alt="Teaser" style="width:100%;">
         </div>
       </div>
     </div>
@@ -177,7 +170,7 @@ Extensive experiments on the KITTI and Ford Multi-AV Seasonal datasets demonstra
         <div class="content has-text-justified">
         </div>
         <div class="publication-video">
-          <img src="./static/images/comparison_ford.jpg" alt="Teaser" style="width:100%;">
+          <img src="./static/images/comparison_ford.png" alt="Teaser" style="width:100%;">
         </div>
       </div>
     </div>
@@ -204,7 +197,7 @@ Extensive experiments on the KITTI and Ford Multi-AV Seasonal datasets demonstra
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="https://arxiv.org/abs/2303.14190">
+         href="https://arxiv.org/abs/">
         <i class="fas fa-file-pdf"></i>
       </a>
     </div>
